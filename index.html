@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium, highly responsive frontend-only website for an Industrial Training Kit Platform.">
+    <title>Industrial Training Kit Platform | Advance Your Career</title>
+    
+    <!-- Google Fonts: Inter & Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Custom Animated Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="glass-nav" id="header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" aria-label="Home">
+                <span class="logo-text">ITK<span class="accent">.</span>Platform</span>
+            </a>
+            
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#modules" class="nav-link">Modules</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle magnetic-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="#enroll" class="btn btn-primary magnetic-btn">Get Started</a>
+                <button class="mobile-menu-toggle" aria-label="Open Mobile Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section section-padding parallax-wrapper">
+            <canvas id="particle-canvas" class="particle-background"></canvas>
+            <div class="hero-content container content-layer">
+                <div class="hero-text">
+                    <div class="floating-badge">Industry Standard 2025</div>
+                    <h1 class="hero-title">Master the <span class="gradient-text">Future</span> of Industry.</h1>
+                    <p class="hero-subtitle">Immersive, hands-on training kits designed to elevate your engineering skills from foundational to advanced in a real-world context.</p>
+                    <div class="hero-ctas">
+                        <a href="#modules" class="btn btn-primary btn-large magnetic-btn">Explore Kits</a>
+                        <a href="#demo" class="btn btn-secondary btn-large magnetic-btn">View Demo</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">Modules</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">10k+</span>
+                            <span class="stat-label">Engineers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">98%</span>
+                            <span class="stat-label">Employed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="model-placeholder 3d-float">
+                        <div class="glass-card visual-card">
+                            <div class="visual-inner">
+                                <div class="cube-wrapper">
+                                    <div class="cube">
+                                        <div class="face front"></div>
+                                        <div class="face back"></div>
+                                        <div class="face right"></div>
+                                        <div class="face left"></div>
+                                        <div class="face top"></div>
+                                        <div class="face bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-element badge-1 glass-card">Sensor Array Active</div>
+                        <div class="floating-element badge-2 glass-card">System Optimized</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wave-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Everything You Need to <span class="gradient-text">Excel</span></h2>
+                    <p class="section-desc">Our platform provides an end-to-end learning ecosystem.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <!-- Feature Cards injected via JS or written in HTML -->
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-1">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">Responsive Learning</h3>
+                        <p class="feature-desc">Access your curriculum seamlessly across mobile, tablet, and desktop setups.</p>
+                    </article>
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-2">
+                        <div class="feature-icon">⚙️</div>
+                        <h3 class="feature-title">Hands-on Practice</h3>
+                        <p class="feature-desc">Interact with virtual twins of actual industry-grade training kits.</p>
+                    </article>
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-3">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="feature-title">Industry Ready Skills</h3>
+                        <p class="feature-desc">Curriculum designed with top engineering firms to match job requirements.</p>
+                    </article>
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-1">
+                        <div class="feature-icon">📜</div>
+                        <h3 class="feature-title">Certification</h3>
+                        <p class="feature-desc">Earn verifiable certificates recognized by leading technical organizations.</p>
+                    </article>
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-2">
+                        <div class="feature-icon">🤝</div>
+                        <h3 class="feature-title">Mentorship</h3>
+                        <p class="feature-desc">Connect with seasoned professionals for 1-on-1 guidance and review.</p>
+                    </article>
+                    <article class="feature-card glass-card tilt-card reveal-on-scroll delay-3">
+                        <div class="feature-icon">🏗️</div>
+                        <h3 class="feature-title">Projects</h3>
+                        <p class="feature-desc">Build a portfolio of real-world deployed industrial systems.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Modules (Timeline) -->
+        <section id="modules" class="modules-section section-padding alternate-bg">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Structured <span class="gradient-text">Curriculum</span></h2>
+                    <p class="section-desc">A step-by-step roadmap to mastery.</p>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <span class="module-tag">Module 1</span>
+                            <h3>Frontend Interfaces</h3>
+                            <p>Build responsive, accessible, and high-performance HMI screens.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <span class="module-tag">Module 2</span>
+                            <h3>Backend Architecture</h3>
+                            <p>Design robust APIs and scalable microservices for IoT devices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <span class="module-tag">Module 3</span>
+                            <h3>Database Systems</h3>
+                            <p>Optimize data pipelines and handle high-throughput telemetry data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow">
+                            <span class="module-tag">Module 4</span>
+                            <h3>System Design & Deployment</h3>
+                            <p>Containerization, CI/CD, and deploying distributed systems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card hover-glow unlock-animation">
+                            <span class="module-tag accent-tag">Module 5</span>
+                            <h3>AI Basics</h3>
+                            <p>Integrate predictive maintenance and smart analytics into your apps.</p>
+                            <div class="lock-overlay"><span class="icon">🔒</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Progress Dashboard Preview -->
+        <section id="dashboard" class="dashboard-section section-padding">
+            <div class="container">
+                <div class="dashboard-layout grid-2">
+                    <div class="dashboard-text reveal-on-scroll">
+                        <h2 class="section-title">Track Your <span class="gradient-text">Journey</span></h2>
+                        <p class="section-desc">Stay motivated with our real-time analytics dashboard. Monitor attendance, module completion, and unlock exclusive badges as you level up your skills.</p>
+                        <ul class="dashboard-features-list">
+                            <li><span>✓</span> Real-time telemetry</li>
+                            <li><span>✓</span> Automated milestone tracking</li>
+                            <li><span>✓</span> Gamified badge system</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dashboard-ui glass-card reveal-on-scroll">
+                        <div class="dashboard-header">
+                            <div class="user-info">
+                                <div class="avatar">Alex.Dev</div>
+                                <div>
+                                    <h4>Alex Mercer</h4>
+                                    <p class="level">Level 12 Engineer</p>
+                                </div>
+                            </div>
+                            <div class="attendance-ring" data-percent="85">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage">85%</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <h5>Course Completion</h5>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 62%;"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>Module 3 In Progress</span>
+                                <span>62%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="badges-section">
+                            <h5>Recent Badges</h5>
+                            <div class="badges-row">
+                                <div class="badge-item active magnetic-btn" title="First Deploy">🚀</div>
+                                <div class="badge-item active magnetic-btn" title="Database Master">💾</div>
+                                <div class="badge-item active magnetic-btn" title="UI Expert">🎨</div>
+                                <div class="badge-item locked magnetic-btn" title="Locked: AI Guru">🤖</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials-section section-padding alternate-bg">
+            <div class="container text-center reveal-on-scroll">
+                <h2 class="section-title">Engineer <span class="gradient-text">Stories</span></h2>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="testimonial-track">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn magnetic-btn" aria-label="Previous Testimonial">←</button>
+                        <div class="carousel-dots" id="carousel-dots"></div>
+                        <button class="carousel-btn next-btn magnetic-btn" aria-label="Next Testimonial">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                </div>
+                
+                <div class="accordion-container">
+                    <details class="glass-card accordion-item reveal-on-scroll">
+                        <summary class="accordion-header">What prerequisite knowledge is required?</summary>
+                        <div class="accordion-content">
+                            <p>Basic understanding of programming logic and web fundamentals is recommended. However, our Module 1 is designed to bring everyone up to speed, regardless of their starting point.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="glass-card accordion-item reveal-on-scroll">
+                        <summary class="accordion-header">Do I need physical hardware?</summary>
+                        <div class="accordion-content">
+                            <p>No. Our platform provides high-fidelity virtual twins of industrial kits. You can practice all exercises directly in your browser using our advanced simulation environment.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="glass-card accordion-item reveal-on-scroll">
+                        <summary class="accordion-header">How long does the certification take?</summary>
+                        <div class="accordion-content">
+                            <p>Most students complete the full curriculum in 3-4 months studying part-time (10-15 hours per week). The platform is self-paced, so you can adjust to your schedule.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="brand-logo">
+                        <span class="logo-text">ITK<span class="accent">.</span>Platform</span>
+                    </a>
+                    <p class="footer-desc">Empowering the next generation of industrial engineers with premium, hands-on digital training.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <a href="#features">Features</a>
+                    <a href="#modules">Curriculum</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#">Pricing</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary magnetic-btn">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" class="social-btn magnetic-btn" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-btn magnetic-btn" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-btn magnetic-btn" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITK Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/canvas-particles.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

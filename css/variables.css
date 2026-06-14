@@ -1,0 +1,82 @@
+:root {
+  /* Warm-Tech Aesthetic Colors */
+  --color-mocha-brown: #A5896F;
+  --color-ethereal-blue: #A0D4E0;
+  --color-moonlit-grey: #F2F0EA;
+  --color-deep-charcoal: #2A2A2A;
+  --color-accent-gold: #D9A441;
+
+  /* Theme System Defaults (Dark Mode initially as per data-theme="dark") */
+  --bg-primary: var(--color-deep-charcoal);
+  --bg-secondary: #1E1E1E; /* Darker variant for alternate sections */
+  --bg-glass: rgba(30, 30, 30, 0.4);
+  --bg-glass-hover: rgba(50, 50, 50, 0.5);
+  --bg-glass-border: rgba(255, 255, 255, 0.05);
+
+  --text-primary: var(--color-moonlit-grey);
+  --text-secondary: rgba(242, 240, 234, 0.7); /* Moonlit Grey with opacity */
+  --text-accent: var(--color-accent-gold);
+
+  --accent-primary: var(--color-ethereal-blue);
+  --accent-secondary: var(--color-mocha-brown);
+  --accent-tertiary: var(--color-accent-gold);
+
+  /* Gradients */
+  --gradient-text: linear-gradient(135deg, var(--color-ethereal-blue), var(--color-accent-gold));
+  --gradient-bg: linear-gradient(135deg, rgba(160, 212, 224, 0.1), rgba(165, 137, 111, 0.1));
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(160, 212, 224, 0.3);
+
+  /* Typography Fluid via clamp() */
+  /* Min width 320px, Max width 1200px */
+  --font-family-heading: 'Inter', sans-serif;
+  --font-family-body: 'Open Sans', sans-serif;
+  
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.3125rem);
+  --font-size-xl: clamp(1.3125rem, 1.15rem + 0.8125vw, 1.71875rem);
+  --font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.125rem);
+  --font-size-3xl: clamp(1.875rem, 1.4rem + 2.375vw, 3.0625rem);
+  --font-size-4xl: clamp(2.25rem, 1.55rem + 3.5vw, 4rem);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+  --bg-primary: var(--color-moonlit-grey);
+  --bg-secondary: #E5E2DA; 
+  --bg-glass: rgba(255, 255, 255, 0.6);
+  --bg-glass-hover: rgba(255, 255, 255, 0.8);
+  --bg-glass-border: rgba(0, 0, 0, 0.05);
+
+  --text-primary: var(--color-deep-charcoal);
+  --text-secondary: rgba(42, 42, 42, 0.7);
+
+  --shadow-sm: 0 4px 12px rgba(165, 137, 111, 0.1);
+  --shadow-md: 0 8px 24px rgba(165, 137, 111, 0.15);
+  --shadow-lg: 0 16px 40px rgba(165, 137, 111, 0.2);
+  --shadow-glow: 0 0 20px rgba(165, 137, 111, 0.3);
+}

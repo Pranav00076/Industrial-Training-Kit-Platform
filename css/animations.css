@@ -1,0 +1,235 @@
+/* Animations & Interactions */
+
+/* Scroll Progress Indicator */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 1002;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: var(--gradient-text);
+  width: 0%;
+  /* Fallback width updated by JS */
+}
+
+/* Support for CSS Scroll-driven animations if available */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress-bar {
+    width: 100%;
+    transform-origin: 0% 50%;
+    animation: scroll-progress linear;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes scroll-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Particle Background Canvas */
+.particle-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Wave Dividers */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave-divider svg, .footer-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider .shape-fill {
+  fill: var(--bg-primary);
+  transition: fill var(--transition-normal);
+}
+
+.footer-wave {
+  position: absolute;
+  top: -59px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.footer-wave .shape-fill {
+  fill: var(--bg-secondary);
+  transition: fill var(--transition-normal);
+}
+
+/* 3D Float Animation for Hero Visual */
+.3d-float {
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotateX(0) rotateY(0); }
+  50% { transform: translateY(-20px) rotateX(2deg) rotateY(2deg); }
+  100% { transform: translateY(0px) rotateX(0) rotateY(0); }
+}
+
+/* Cube CSS Art (Placeholder for 3D model) */
+.cube-wrapper {
+  perspective: 800px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(160, 212, 224, 0.1);
+  border: 2px solid var(--accent-primary);
+  box-shadow: inset 0 0 20px rgba(160, 212, 224, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes spin {
+  0% { transform: rotateX(0) rotateY(0); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.visual-card {
+  padding: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-element {
+  position: absolute;
+  padding: 8px 16px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-1 {
+  top: 10%; right: -10%;
+  animation: float 5s ease-in-out infinite reverse;
+  color: var(--accent-primary);
+}
+
+.badge-2 {
+  bottom: 10%; left: -10%;
+  animation: float 7s ease-in-out infinite 1s;
+  color: var(--accent-tertiary);
+}
+
+/* Scroll Reveal Animations (JS fallback) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* CSS View Transitions API (if supported) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+/* Accordion slide down */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lock overlay */
+.lock-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: opacity 0.5s;
+}
+[data-theme="light"] .lock-overlay {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Magnetic Button utility class */
+.magnetic-btn {
+  /* JS will handle transform */
+  will-change: transform;
+}
+
+/* Tilt Card utility class */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tilt-card .feature-icon {
+  transform: translateZ(30px); /* Parallax effect for icon */
+  display: inline-block;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Progress circle animation */
+@keyframes progress {
+  0% { stroke-dasharray: 0 100; }
+}
